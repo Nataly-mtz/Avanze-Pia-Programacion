@@ -1,0 +1,23 @@
+# Librería para manejar datos de tipo datetime
+ fecha y hora de importación
+
+# Clase para guardar los incidentes
+clase   Incidente :
+      def  __init__ ( self , FECHA , CASOS , MUERTES , PAIS ):
+            auto . FECHA  =  FECHA
+            auto . CASOS  =  CASOS
+            auto . MUERTES  =  MUERTES
+            auto . PAIS  =  PAIS
+
+# Lectura secuencial del archivo
+con  abierto ( 'AnálisisCOVID.csv' ) como  archivo_csv :
+    lector_csv  =  csv . lector ( archivo_csv , delimitador = '|' )
+    contador_lineas  =  0
+    # Creando una lista vacía.
+    lista_incidentes  = []
+    # Lectura secuencial.
+    para  linea_datos  en  lector_csv :
+        si  contador_lineas  ==  0 :
+            # Si es la primera línea, habitación los nombres de campo y no guardo nada
+            # en la lista.
+            print ( f'Los nombres de columna son { "
